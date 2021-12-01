@@ -2,12 +2,18 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const AppNavBar = () => {
+const AppNavBar = (props) => {
   const [active, setActive] = useState(null);
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+      <nav
+        className={
+          props.theme === 0
+            ? "navbar navbar-expand-lg navbar-light bg-light "
+            : "navbar navbar-expand-lg navbar-dark bg-dark "
+        }
+      >
         <div className="container-fluid fw-bold ">
           <Link className="navbar-brand   m-2" to="#">
             News App
